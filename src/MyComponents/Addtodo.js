@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 
 export default function Addtodo({addTodo}) {
+    let buttonStyle = {
+        borderRadius: "25px",
+        backgroundColor: "#1a75ff",
+        fontColor: "#f2f2f2"
+    }
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
 
@@ -29,7 +34,9 @@ export default function Addtodo({addTodo}) {
                     <input type="text" value={desc} onChange={(e)=>setDesc(e.target.value)}
                     className="form-control" id="desc" />
                 </div>
-                <button type="submit" className="btn btn-sm btn-success">Add todo</button>
+                <span>
+                <button type="submit" className="btn btn-md btn-primary" style={buttonStyle}>Add todo</button>
+                </span>
             </form>
         </div>
     )

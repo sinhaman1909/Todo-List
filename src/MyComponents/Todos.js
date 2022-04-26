@@ -4,7 +4,9 @@ import TodoItem from './TodoItem'
 export default function Todos(props) {
   let todosStyle = {
     minHeight: "70vh",
-    margin: "40px auto"
+    margin: "40px auto",
+    backgroundColor: "#fff2e6",
+    borderRadius: "30px"
   }
   return (
     <div className="container" style={todosStyle}>
@@ -12,7 +14,7 @@ export default function Todos(props) {
       {props.todos.length===0 ? "No todos to display" : 
       props.todos.map((todo) => {
         return (
-            <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete}/> 
+            <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete} onComplete={props.onComplete}/> 
         )
       })}
     </div>
