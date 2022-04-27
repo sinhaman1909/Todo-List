@@ -5,7 +5,7 @@ export default function Todos(props) {
   let todosStyle = {
     minHeight: "70vh",
     margin: "40px auto",
-    backgroundColor: "#fff2e6",
+    backgroundColor: "#f2f2f2",
     borderRadius: "30px"
   }
   return (
