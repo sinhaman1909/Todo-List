@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 export default function Addtodo({addTodo}) {
     let buttonStyle = {
         borderRadius: "25px",
-        backgroundColor: "#1a75ff",
-        fontColor: "#f2f2f2"
+        backgroundColor: "#0072EF",
+        color: "#f2f2f2"
     }
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
@@ -35,7 +35,7 @@ export default function Addtodo({addTodo}) {
                     className="form-control" id="desc" />
                 </div>
                 <span>
-                <button type="submit" className="btn btn-md btn-primary" style={buttonStyle}>Add todo</button>
+                <button type="submit" className="btn btn-md" style={buttonStyle}>Add todo</button>
                 </span>
             </form>
         </div>

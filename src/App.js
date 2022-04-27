@@ -1,4 +1,5 @@
 import './App.css';
+import { Home } from './MyComponents/Home';
 import Header from './MyComponents/Header';
 import { Breaker } from './MyComponents/Breaker';
 import Todos from './MyComponents/Todos';
@@ -36,7 +37,7 @@ function App() {
     console.log("I am adding this todo", title, desc)
     let sno;
     if (todos.length === 0) {
-      sno =1;
+      sno = 1;
     }
     else {
       sno = todos[todos.length - 1].sno + 1;
@@ -55,25 +56,32 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos])
 
-  return ( 
-    <> 
-    <Router>
-      <Header title="My Todo List"/> 
-      <Breaker/>
-      <Routes>
+  return (
+    <>
+      <Router>
+        <Header title="todoit" />
+        <Routes>
 
-          <Route path="/" element = {
-          <>
-          <AddTodo addTodo={addTodo}/>
-          <Todos todos={todos} onDelete={onDelete}/>
-          </>
+          <Route exact path="/" element={
+            <>
+              <Home />
+            </>
           }
           />
 
-          <Route path="/about" element={<About/>} />
-        </Routes> 
-      <Footer />
-    </Router>
+          <Route exact path="/ToDo" element={
+            <>
+              <Breaker/>
+              <AddTodo addTodo={addTodo} />
+              <Todos todos={todos} onDelete={onDelete} />
+            </>
+          }
+          />
+
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   );
 }
